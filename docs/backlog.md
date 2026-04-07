@@ -33,7 +33,7 @@
 
 | ID       | Tarefa Técnica                                                                                                                                                                                                                      | Esforço | Sprint | Status |
 | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------ | ------ |
-| **T-04** | Criar pacote `auth_client`: integração do SDK do Supabase Flutter. Implementar providers do Riverpod para gerenciar estado de sessão (signIn, signUp, signOut, getSession) que poderão ser consumidos por qualquer app no monorepo. | 1d      | S1     | ⬜     |
+| **T-04** | Criar pacote `auth_client`: integração do SDK do Supabase Flutter. Implementar providers do Riverpod para gerenciar estado de sessão (signIn, signUp, signOut, getSession) que poderão ser consumidos por qualquer app no monorepo. | 1d      | S1     | ⚠️     |
 
 ---
 
@@ -118,10 +118,6 @@
 
 ### Sprint 1 (Infraestrutura, Reestruturação & Domínio)
 
-**Fase 1: Configuração do Chassi (Bloqueadores)**
-
-3. `T-04` — Pacote Auth Client (Supabase base).
-
 **Fase 2: Regras de Negócio** 4. `T-03` — Modelos Puros (`core_domain`) — Base para tudo.
 
 ### Sprint 2 (Backend & Serviços de Nuvem)
@@ -156,3 +152,8 @@
 <!-- TODO -->
 <!-- Run dart pub global activate melos -->
 <!-- Run melos bootstrap -->
+
+<!-- cd packages/auth_client
+dart run build_runner build -d
+run melos bootstrap from the root
+flutter test -->
