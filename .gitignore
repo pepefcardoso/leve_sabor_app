@@ -83,7 +83,7 @@ build/web/
 migrate_working_dir/
 
 # Arquivos de ambiente (Senhas/Keys)
-# .env*
+.env*
 
 # -----------------------------------------------------------------------
 # MELOS WORKSPACE

@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgis/postgis:15-3.3-alpine
+    container_name: levesabor_db
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "${DB_PORT}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - levesabor_network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: levesabor_pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+    ports:
+      - "${PGADMIN_PORT}:80"
+    networks:
+      - levesabor_network
+    depends_on:
+      - db
+
+networks:
+  levesabor_network:
+    driver: bridge
+
+volumes:
+  postgres_data:

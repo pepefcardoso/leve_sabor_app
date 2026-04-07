@@ -26,7 +26,7 @@
 | ID       | Tarefa Técnica                                                                                                                                                                                                                       | Esforço | Sprint | Status |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ------ | ------ |
 | **T-01** | Reestruturação do Repositório: mover o código Flutter atual para `apps/app_mobile_legacy`. Criar o arquivo `melos.yaml` na raiz, configurar scripts de bootstrap, formatação e estruturar as pastas base (`apps/` e `packages/`).    | 0.5d    | S1     | ⚠️     |
-| **T-02** | Setup do `docker-compose.yaml` local na raiz do repositório: provisionamento de container PostgreSQL (idealmente com PostGIS habilitado) e pgAdmin/Adminer para interface de gerência.                                               | 0.5d    | S1     | ⬜     |
+| **T-02** | Setup do `docker-compose.yaml` local na raiz do repositório: provisionamento de container PostgreSQL (idealmente com PostGIS habilitado) e pgAdmin/Adminer para interface de gerência.                                               | 0.5d    | S1     | ✅     |
 | **T-03** | Criar pacote `core_domain`: extrair modelos antigos (`Business`, `BlogPost`, `User`, `Category`) e reescrevê-los como entidades puras em Dart usando `freezed` e `json_serializable` para garantir tipagem estrita entre as camadas. | 1d      | S1     | ⬜     |
 
 ### US-02 — Identidade e Acesso (Supabase Auth)
@@ -120,8 +120,6 @@
 
 **Fase 1: Configuração do Chassi (Bloqueadores)**
 
-1. `T-01` — Mover o repositório legado e inicializar Melos Workspace.
-2. `T-02` — Docker (PostgreSQL + PostGIS).
 3. `T-04` — Pacote Auth Client (Supabase base).
 
 **Fase 2: Regras de Negócio** 4. `T-03` — Modelos Puros (`core_domain`) — Base para tudo.
