@@ -27,7 +27,7 @@
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ------ | ------ |
 | **T-01** | Reestruturação do Repositório: mover o código Flutter atual para `apps/app_mobile_legacy`. Criar o arquivo `melos.yaml` na raiz, configurar scripts de bootstrap, formatação e estruturar as pastas base (`apps/` e `packages/`).    | 0.5d    | S1     | ⚠️     |
 | **T-02** | Setup do `docker-compose.yaml` local na raiz do repositório: provisionamento de container PostgreSQL (idealmente com PostGIS habilitado) e pgAdmin/Adminer para interface de gerência.                                               | 0.5d    | S1     | ✅     |
-| **T-03** | Criar pacote `core_domain`: extrair modelos antigos (`Business`, `BlogPost`, `User`, `Category`) e reescrevê-los como entidades puras em Dart usando `freezed` e `json_serializable` para garantir tipagem estrita entre as camadas. | 1d      | S1     | ⬜     |
+| **T-03** | Criar pacote `core_domain`: extrair modelos antigos (`Business`, `BlogPost`, `User`, `Category`) e reescrevê-los como entidades puras em Dart usando `freezed` e `json_serializable` para garantir tipagem estrita entre as camadas. | 1d      | S1     | ⚠️     |
 
 ### US-02 — Identidade e Acesso (Supabase Auth)
 
@@ -116,10 +116,6 @@
 
 > A lista abaixo ordena a execução por **dependências arquiteturais**, mitigando riscos de bloqueios.
 
-### Sprint 1 (Infraestrutura, Reestruturação & Domínio)
-
-**Fase 2: Regras de Negócio** 4. `T-03` — Modelos Puros (`core_domain`) — Base para tudo.
-
 ### Sprint 2 (Backend & Serviços de Nuvem)
 
 **Fase 1: Motor da API**
@@ -154,6 +150,11 @@
 <!-- Run melos bootstrap -->
 
 <!-- cd packages/auth_client
+dart run build_runner build -d
+run melos bootstrap from the root
+flutter test -->
+
+<!-- cd packages/core_domain
 dart run build_runner build -d
 run melos bootstrap from the root
 flutter test -->
