@@ -71,11 +71,12 @@
 
 ### US-06 — Construção do Painel Admin (Flutter Web)
 
-| ID       | Tarefa Técnica                                                                                                                                                                            | Esforço | Sprint | Status |
-| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------ | ------ |
-| **T-12** | Setup do `apps/app_admin` (Flutter Web): layout base com navegação lateral (Sidebar) roteado via `go_router`. Criar tela de Login restrita para Admins consumindo o `auth_client`.        | 1d      | S3     | ⬜     |
-| **T-13** | Formulário de Estabelecimentos: campos de dados do negócio + upload de logo (requisitando a pre-signed URL ao backend e enviando a imagem via `PUT` diretamente pro AWS S3 pelo browser). | 1d      | S3     | ⬜     |
-| **T-14** | Editor de Blog Posts: tela com grid de gerenciamento (DataTables), formulário de cadastro com editor de Rich Text e vinculação de categorias.                                             | 1d      | S3     | ⬜     |
+| ID        | Tarefa Técnica                                                                                                                                                                            | Esforço | Sprint | Status |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------ | ------ |
+| **T-12**  | Setup do `apps/app_admin` (Flutter Web): layout base com navegação lateral (Sidebar) roteado via `go_router`. Criar tela de Login restrita para Admins consumindo o `auth_client`.        | 1d      | S3     | ⬜     |
+| **T-13**  | Formulário de Estabelecimentos: campos de dados do negócio + upload de logo (requisitando a pre-signed URL ao backend e enviando a imagem via `PUT` diretamente pro AWS S3 pelo browser). | 1d      | S3     | ⬜     |
+| **T-14**  | Editor de Blog Posts: tela com grid de gerenciamento (DataTables), formulário de cadastro com editor de Rich Text e vinculação de categorias.                                             | 1d      | S3     | ⬜     |
+| **T-14b** | Gerenciamento de Usuários (Admin): Tela com grid para listar usuários, inativar contas e editar perfis/roles (Admin, User, Business_Owner) consumindo APIs administrativas do Supabase.   | 1d      | S3     | ⬜     |
 
 ---
 
@@ -89,13 +90,13 @@
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ------ | ------ |
 | **T-15** | Inicializar `apps/app_mobile` (Clean Architecture): portar as telas legadas de autenticação e navegação base. Substituir a injeção do Kiwi/BLoC legado por Riverpod para gerência de estado das listas.                  | 1d      | S4     | ⬜     |
 | **T-16** | Query PostGIS no Dart Frog (Backend): criar rota `GET /businesses/nearby?lat=X&lng=Y&radius=Z` utilizando a função `ST_DWithin` do PostgreSQL/PostGIS para retornar resultados baseados na localização atual do usuário. | 1d      | S4     | ⬜     |
-| **T-17** | Refatorar UI do Diretório (`businesses_index.dart`): integrar permissão de GPS nativa. Consumir a rota `nearby` e aplicar filtros avançados. Substituir os cards legados pelos do novo `design_system`.                  | 1d      | S4     | ⬜     |
+| **T-17** | Refatorar UI do Diretório: Integrar permissão de GPS nativa. Consumir a rota `nearby`, aplicar filtros avançados, implementar visualização em Mapa interativo e criar tela isolada de Detalhes do Estabelecimento.       | 1.5d    | S4     | ⬜     |
 
 ### US-08 — Experiência do Blog
 
-| ID       | Tarefa Técnica                                                                                                                                                                                                                         | Esforço | Sprint | Status |
-| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------ | ------ |
-| **T-18** | Refatorar visualizador de Blog (`ViewPostPage` e `HomeBlogPage`): atualizar lógica de favoritos para bater na nova API em Dart. Mudar o carregamento de imagens para otimizar os retornos do AWS S3, gerenciando loading via Riverpod. | 1d      | S4     | ⬜     |
+| ID       | Tarefa Técnica                                                                                                                                                                                     | Esforço | Sprint | Status |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------ | ------ |
+| **T-18** | Refatorar visualizador de Blog: Implementar listagem com barra de busca e filtros de categoria. Criar tela de Detalhes do Post (viewer) e atualizar lógica de favoritos interagindo com o backend. | 1d      | S4     | ⬜     |
 
 ---
 
@@ -103,10 +104,11 @@
 
 > Infraestrutura que viabiliza a manutenção a longo prazo do monorepo e portfólio.
 
-| ID       | Tarefa Técnica                                                                                                                                                           | Esforço | Sprint | Status |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ------ | ------ |
-| **T-19** | Configurar GitHub Actions (CI): pipeline rodando `melos run format`, `melos run analyze` e `melos run test` sempre que houver PR para a branch principal.                | 0.5d    | S2     | ⬜     |
-| **T-20** | Testes Unitários de Backend: criar suíte de testes usando `mocktail` para mockar o banco de dados e garantir funcionamento adequado dos endpoints críticos no Dart Frog. | 1d      | S4     | ⬜     |
+| ID       | Tarefa Técnica                                                                                                                                                                                            | Esforço | Sprint | Status |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------ | ------ |
+| **T-19** | Configurar GitHub Actions (CI): pipeline rodando `melos run format`, `melos run analyze` e `melos run test` sempre que houver PR para a branch principal.                                                 | 0.5d    | S2     | ⬜     |
+| **T-20** | Testes Unitários de Backend: criar suíte de testes usando `mocktail` para mockar o banco de dados e garantir funcionamento adequado dos endpoints críticos no Dart Frog.                                  | 1d      | S4     | ⬜     |
+| **T-21** | Tela de Perfil: Criar interface para edição de dados pessoais (nome, bio), upload de avatar (via AWS S3) e gerenciamento de conta (logout, excluir conta). Sincronizar dados via Supabase Auth e backend. | 1d      | S4     | ⬜     |
 
 ---
 
@@ -141,7 +143,7 @@
 1. `T-10` — Extrair pacote Design System do legado.
 2. `T-11` — Pacote Rest Client (Dio configurado).
 
-**Fase 2: Aplicação Web** 3. `T-12` — Estrutura e Auth no Admin Web. 4. `T-13` — CRUD de Estabelecimentos na Web (Consome o T-08 para upload). 5. `T-14` — Editor de Posts do Blog Web.
+**Fase 2: Aplicação Web** 3. `T-12` — Estrutura e Auth no Admin Web. 4. `T-13` — CRUD de Estabelecimentos na Web (Consome o T-08 para upload). 5. `T-14` — Editor de Posts do Blog Web. 6. `T-14b` — Gerenciamento de Usuários (Admin) consumindo a Service Role do Supabase via backend ou API dedicada.
 
 ### Sprint 4 (Mobile Cleanup & Funcionalidades Novas)
 
@@ -149,6 +151,6 @@
 
 1. `T-16` — Backend: Query Geoespacial (Necessário para o app mobile real-time).
 
-**Fase 2: App User-Facing** 2. `T-15` — Estrutura Base Mobile refatorada para usar Riverpod + Pacotes. 3. `T-17` — Mobile: Atualizar tela de Diretório + GPS (Consome o T-16). 4. `T-18` — Mobile: Refatorar Blog Viewer e Favoritos.
+**Fase 2: App User-Facing** 2. `T-15` — Estrutura Base Mobile refatorada para usar Riverpod + Pacotes. 3. `T-17` — Mobile: Atualizar tela de Diretório + GPS (Consome o T-16). 4. `T-18` — Mobile: Refatorar Blog Viewer e Favoritos. 4. `T-21` Mobile: Perfil do Usuário (Edição de dados, Upload de Avatar via S3 e Gestão da Conta).
 
 **Fase 3: Qualidade Final** 5. `T-20` — Testes Unitários de Backend para fechar a estabilidade da API.

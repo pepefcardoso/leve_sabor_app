@@ -28,15 +28,16 @@
 - [ ] Initialize `apps/app_admin`.
 - [ ] Setup Riverpod and routing (GoRouter).
 - [ ] Build Login screen (Admin only).
-- [ ] Build Data Management grids (CRUD for Blogs and Businesses).
+- [ ] Build Data Management grids (CRUD for Users, Blogs, and Businesses).
 - [ ] Implement direct-to-S3 image uploads from the browser.
 
 ## Phase 5: Mobile App Refactoring (Flutter Mobile)
 
 - [ ] Initialize `apps/app_mobile` applying Clean Architecture.
-- [ ] Port and refactor legacy Authentication and Home screens, adopting Riverpod and `auth_client`.
-- [ ] Refactor Business Directory UI, consuming `design_system` and new `rest_client`.
-- [ ] Refactor Blog viewer and favorites functionality.
+- [ ] Port and refactor legacy Authentication (Login/Signup) adopting Riverpod and `auth_client`.
+- [ ] Implement User Profile screen (update data, manage account).
+- [ ] Refactor Business Directory UI (List, Map View, Search/Filters, and Business Details screen).
+- [ ] Refactor Blog functionality (List with search/filters, Post Details viewer, and favorites).
 - [ ] Deprecate and remove `apps/app_mobile_legacy` once feature parity is reached.
 
 ## Phase 6: Polish & Advanced Features (V2 Exclusives)
