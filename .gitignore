@@ -1,4 +1,76 @@
-# Miscellaneous
+# -----------------------------------------------------------------------
+# FLUTTER & DART
+# -----------------------------------------------------------------------
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+
+# Documentação gerada
+**/doc/api/
+
+# Símbolos e Ofuscação
+app.*.symbols
+app.*.map.json
+
+# -----------------------------------------------------------------------
+# PLATAFORMAS ESPECÍFICAS (Android, iOS, Web, Desktop)
+# -----------------------------------------------------------------------
+
+# Android
+/android/app/debug
+/android/app/profile
+/android/app/release
+*.keystore
+*.jks
+local.properties
+
+# iOS
+**/ios/Flutter/.last_build_id
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/DerivedData
+*.item
+*.moved-aside
+Podfile.lock
+
+# Web
+build/web/
+.dart_tool/chrome-device/
+
+# MacOS (Desktop)
+**/macos/Flutter/ephemeral/
+**/macos/Flutter/GeneratedPluginRegistrant.swift
+
+# Linux (Desktop)
+**/linux/flutter/ephemeral/
+
+# Windows (Desktop)
+**/windows/flutter/ephemeral/
+**/windows/CMakeLists.txt.user
+
+# -----------------------------------------------------------------------
+# IDEs & TOOLS
+# -----------------------------------------------------------------------
+
+# IntelliJ / Android Studio
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# -----------------------------------------------------------------------
+# MISCELLANEOUS / OS
+# -----------------------------------------------------------------------
 *.class
 *.log
 *.pyc
@@ -10,35 +82,5 @@
 .svn/
 migrate_working_dir/
 
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
-
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-.packages
-.pub-cache/
-.pub/
-/build/
-
-# Symbolication related
-app.*.symbols
-
-# Obfuscation related
-app.*.map.json
-
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+# Arquivos de ambiente (Senhas/Keys)
+.env*
