@@ -1,0 +1,26 @@
+name: leve_sabor_v2
+
+packages:
+  - apps/**
+  - packages/**
+
+scripts:
+  bootstrap:
+    run: melos bootstrap
+    description: Initialize the workspace and link packages.
+
+  format:
+    run: melos exec -- "dart format ."
+    description: Format all packages.
+
+  analyze:
+    run: melos exec -- "flutter analyze"
+    description: Analyze all packages.
+
+  test:
+    run: melos exec --dir-exists="test" -- "flutter test"
+    description: Run tests in all packages that have a test directory.
+
+  clean:
+    run: melos clean
+    description: Clean all packages.

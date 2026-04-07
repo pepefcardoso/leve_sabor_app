@@ -10,7 +10,7 @@
 
 | Sprint                 | Foco Principal                                       | Tarefas     | Esforço | Status      | Critérios de "Pronto" (Done)                                                                                                            |
 | ---------------------- | ---------------------------------------------------- | ----------- | ------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| **Sprint 1 (Sem 1–2)** | v2.0 — Reestruturação do Repo, Infra e Core Domain   | T-01 a T-04 | ~4d dev | ⬜ Pendente | Repositório atual convertido para workspace Melos; DB PostgreSQL rodando via Docker; modelos centrais criados; Supabase integrado.      |
+| **Sprint 1 (Sem 1–2)** | v2.0 — Reestruturação do Repo, Infra e Core Domain   | T-01 a T-04 | ~4d dev | ⚠️ Pendente | Repositório atual convertido para workspace Melos; DB PostgreSQL rodando via Docker; modelos centrais criados; Supabase integrado.      |
 | **Sprint 2 (Sem 3–4)** | v2.0 — Backend API Core (Dart Frog) e Upload S3      | T-05 a T-09 | ~5d dev | ⬜ Pendente | Endpoints REST criados com acesso validado via JWT (Supabase); geração de Pre-signed URLs do AWS S3 operante.                           |
 | **Sprint 3 (Sem 5–6)** | v2.0 — Shared Packages & App Admin Web (CMS)         | T-10 a T-14 | ~5d dev | ⬜ Pendente | Pacotes de Design e Network consolidados; Admin web logando via RBAC e gerenciando (CRUD) Estabelecimentos e Posts do Blog.             |
 | **Sprint 4 (Sem 7–8)** | v2.0 — Migração do App Mobile (Clean Arch + PostGIS) | T-15 a T-18 | ~5d dev | ⬜ Pendente | Código legado refatorado para consumir os novos pacotes; busca geoespacial funcionando; leitura de blog e favoritos ativa via Riverpod. |
@@ -25,7 +25,7 @@
 
 | ID       | Tarefa Técnica                                                                                                                                                                                                                       | Esforço | Sprint | Status |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ------ | ------ |
-| **T-01** | Reestruturação do Repositório: mover o código Flutter atual para `apps/app_mobile_legacy`. Criar o arquivo `melos.yaml` na raiz, configurar scripts de bootstrap, formatação e estruturar as pastas base (`apps/` e `packages/`).    | 0.5d    | S1     | ⬜     |
+| **T-01** | Reestruturação do Repositório: mover o código Flutter atual para `apps/app_mobile_legacy`. Criar o arquivo `melos.yaml` na raiz, configurar scripts de bootstrap, formatação e estruturar as pastas base (`apps/` e `packages/`).    | 0.5d    | S1     | ⚠️     |
 | **T-02** | Setup do `docker-compose.yaml` local na raiz do repositório: provisionamento de container PostgreSQL (idealmente com PostGIS habilitado) e pgAdmin/Adminer para interface de gerência.                                               | 0.5d    | S1     | ⬜     |
 | **T-03** | Criar pacote `core_domain`: extrair modelos antigos (`Business`, `BlogPost`, `User`, `Category`) e reescrevê-los como entidades puras em Dart usando `freezed` e `json_serializable` para garantir tipagem estrita entre as camadas. | 1d      | S1     | ⬜     |
 
@@ -154,3 +154,7 @@
 **Fase 2: App User-Facing** 2. `T-15` — Estrutura Base Mobile refatorada para usar Riverpod + Pacotes. 3. `T-17` — Mobile: Atualizar tela de Diretório + GPS (Consome o T-16). 4. `T-18` — Mobile: Refatorar Blog Viewer e Favoritos. 4. `T-21` Mobile: Perfil do Usuário (Edição de dados, Upload de Avatar via S3 e Gestão da Conta).
 
 **Fase 3: Qualidade Final** 5. `T-20` — Testes Unitários de Backend para fechar a estabilidade da API.
+
+<!-- TODO -->
+<!-- Run dart pub global activate melos -->
+<!-- Run melos bootstrap -->
